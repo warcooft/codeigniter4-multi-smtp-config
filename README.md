@@ -12,7 +12,7 @@ composer require aselsan/codeigniter4-multi-smtp-config
 php spark smtpconfig:publish
 ```
 
-After that you have to set it up with your email credentials.
+After that, check the app/Config/MultiEmail.php file, and set it up with your email credentials.
 
 ## Usage
 
