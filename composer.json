@@ -1,0 +1,25 @@
+{
+  "name": "aselsan/codeigniter4-multi-smtp-config",
+  "description": "CodeIgniter Multiple SMTP Configuration",
+  "type": "library",
+  "require": {
+    "php": "^8.0"
+  },
+  "require-dev": {
+    "codeigniter4/framework": "^4.8",
+    "rector/rector": "dev-main"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Aselsan\\CodeigniterMultiSmtpConfig\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "warcooft",
+      "email": "syamsuddine9@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev"
+}
