@@ -1,10 +1,10 @@
 # CodeIgniter Multiple SMTP Configuration
 
-![Version](http://poser.pugx.org/aselsan/codeigniter4-multi-smtp-config/version)(https://packagist.org/packages/aselsan/codeigniter4-multi-smtp-config)
-![Latest Unstable Version](http://poser.pugx.org/aselsan/codeigniter4-multi-smtp-config/v/unstable)(https://packagist.org/packages/aselsan/codeigniter4-multi-smtp-config)
+![Version](http://poser.pugx.org/aselsan/codeigniter4-multi-smtp-config/version)
+![Latest Unstable Version](http://poser.pugx.org/aselsan/codeigniter4-multi-smtp-config/v/unstable)
 ![PHP](https://img.shields.io/badge/PHP-%5E8.0-blue)
 ![CodeIgniter](https://img.shields.io/badge/CodeIgniter-%5E4.8-blue)
-![License](http://poser.pugx.org/aselsan/codeigniter4-multi-smtp-config/license)(https://packagist.org/packages/aselsan/codeigniter4-multi-smtp-config)
+![License](http://poser.pugx.org/aselsan/codeigniter4-multi-smtp-config/license)
 
 ## Installation
 
