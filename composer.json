@@ -3,7 +3,8 @@
   "description": "CodeIgniter Multiple SMTP Configuration",
   "type": "library",
   "require": {
-    "php": "^8.0"
+    "php": "^8.0",
+    "codeigniter4/settings": "^2.1"
   },
   "require-dev": {
     "codeigniter4/framework": "^4.8",
