@@ -12,6 +12,9 @@ class MultiSMTPConfig extends BaseCommand
     protected $group       = 'SMTPConfig';
     protected $name        = 'smtpconfig:publish';
     protected $description = 'Publish SMTP config file into the current application.';
+    protected $options = [
+        '-f' => 'Force overwrite ALL existing files in destination.',
+    ];
 
     /**
      * @return void
@@ -22,10 +25,28 @@ class MultiSMTPConfig extends BaseCommand
 
         $publisher = new Publisher($source, APPPATH);
 
+        $path = 'Config/MultiEmail.php';
+        $cleanPath = clean_path($path);
+        $merge = true;
+
+        if (file_exists(APPPATH . $path)) {
+            $overwrite = (bool) CLI::getOption('f');
+
+            if (
+                ! $overwrite
+                && CLI::prompt("  File '{$cleanPath}' already exists in destination. Overwrite?", ['n', 'y']) === 'n'
+            ) {
+                CLI::newLine();
+                CLI::error("  Skipped {$cleanPath}. If you wish to overwrite, please use the '-f' option or reply 'y' to the prompt.");
+
+                return;
+            }
+        }
+
         try {
             $publisher->addPaths([
-                'Config/MultiEmail.php',
-            ])->merge(false);
+                $path,
+            ])->merge($merge);
         } catch (Throwable $e) {
             $this->showError($e);
 
