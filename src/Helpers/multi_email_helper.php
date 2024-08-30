@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 use CodeIgniter\Email\Email;
 
-if (! defined('multi_email')) {
+if (! function_exists('multi_email')) {
     /**
      * Provides convenient access to the CodeIgniter Email class.
      *
