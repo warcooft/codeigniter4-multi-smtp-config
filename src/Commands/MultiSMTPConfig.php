@@ -1,6 +1,6 @@
 <?php
 
-namespace Aselsan\CodeigniterMultiSmtpConfig\Config;
+namespace Aselsan\CodeigniterMultiSmtpConfig\Commands;
 
 use CodeIgniter\CLI\BaseCommand;
 use CodeIgniter\CLI\CLI;
