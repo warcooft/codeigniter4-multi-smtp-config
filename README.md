@@ -53,8 +53,6 @@ if ($email->send(false) === false) {
 $email->clear();
 ```
 
-That's it.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
