@@ -23,7 +23,7 @@ $email->setSubject("Test Send");
 $email->setMessage('Hi, .. ');
 
 if ($email->send(false) === false) {
-       throw new Exception('Cannot send emai:' . $email->printDebugger(['headers']));
+       throw new Exception('Cannot send email:' . $email->printDebugger(['headers']));
 }
 
 // Clear the email
@@ -41,7 +41,7 @@ $email->setSubject("Test Send");
 $email->setMessage('Hi, .. ');
 
 if ($email->send(false) === false) {
-       throw new Exception('Cannot send emai:' . $email->printDebugger(['headers']));
+       throw new Exception('Cannot send email:' . $email->printDebugger(['headers']));
 }
 
 // Clear the email
