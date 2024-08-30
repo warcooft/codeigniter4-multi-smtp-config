@@ -35,8 +35,8 @@ class MultiSMTPConfig extends BaseCommand
         foreach ($publisher->getPublished() as $file) {
             $contents = file_get_contents($file);
             $contents = str_replace('namespace Aselsan\\CodeigniterMultiSmtpConfig\\Config', 'namespace Config', $contents);
-            $contents = str_replace('use CodeIgniter\\Config\\BaseConfig', 'use Aselsan\\CodeigniterMultiSmtpConfig\\Config as BaseMultiSmtpConfig', $contents);
-            $contents = str_replace('class MultiEmail extends BaseConfig', 'class MultiEmail extends BaseMultiSmtpConfig', $contents);
+            $contents = str_replace('use CodeIgniter\\Config\\BaseConfig', 'use Aselsan\\CodeigniterMultiSmtpConfig\\Config\\MultiEmail as BaseMultiEmail', $contents);
+            $contents = str_replace('class MultiEmail extends BaseConfig', 'class MultiEmail extends BaseMultiEmail', $contents);
             file_put_contents($file, $contents);
         }
 
