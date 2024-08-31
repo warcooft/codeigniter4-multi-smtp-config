@@ -36,7 +36,7 @@ if ($email->send(false) === false) {
 $email->clear();
 ```
 
-You can use a different vendor/driver by providing the group name in the second parameter.
+You can use a different mail config by providing the group name in the second parameter.
 
 ```php
 helper('multi_email');
