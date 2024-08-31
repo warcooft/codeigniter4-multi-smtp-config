@@ -1,4 +1,5 @@
 # CodeIgniter Multiple SMTP Configuration
+A lightweight Multi-SMTP configuration helper for your CodeIgniter 4 application. This package allows you to use different email accounts simultaneously.
 
 ![CodeIgniter](https://img.shields.io/badge/CodeIgniter-%5E4.8-blue)
 ![PHP Version Require](https://img.shields.io/badge/PHP-%5E8.0-blue)
