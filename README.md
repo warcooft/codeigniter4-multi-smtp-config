@@ -25,8 +25,8 @@ helper('multi_email');
 
 $email = multi_email(['mailType' => 'html']);
 $email->setTo('example@gmail.com');
-$email->setSubject("Test Send");
-$email->setMessage('Hi, .. ');
+$email->setSubject("Test Send Mail");
+$email->setMessage('Hi, Bonjour');
 
 if ($email->send(false) === false) {
        throw new Exception('Cannot send email:' . $email->printDebugger(['headers']));
@@ -43,8 +43,8 @@ helper('multi_email');
 
 $email = multi_email(['mailType' => 'html'], 'outlook');
 $email->setTo('example@gmail.com');
-$email->setSubject("Test Send");
-$email->setMessage('Hi, .. ');
+$email->setSubject("Test Send Mail");
+$email->setMessage('Hi, Bonjour');
 
 if ($email->send(false) === false) {
        throw new Exception('Cannot send email:' . $email->printDebugger(['headers']));
