@@ -21,38 +21,36 @@ if (! function_exists('multi_email')) {
      *
      * @internal
      */
-    function multi_email(array $overrides = [], string $group = ''): Email
+    function multi_email(array $overrides = [], string $group = 'default'): Email
     {
         if (!setting('MultiEmail.' . $group)) {
             throw new Exception("Cannot send email from 'multi_email' helper.\n Undefined group name:  $group");
         }
 
-        $defaultGroup  = !empty($group) ? strtolower($group) : setting('MultiEmail.defaultGroup');
-
         $config = [
-            'fromEmail'     => env("email.$defaultGroup.fromEmail", setting('MultiEmail.' . $defaultGroup)['fromEmail']),
-            'fromName'      => env("email.$defaultGroup.fromName", setting('MultiEmail.' . $defaultGroup)['fromName']),
-            'userAgent'     => setting('MultiEmail.' . $defaultGroup)['userAgent'],
-            'protocol'      => env("email.$defaultGroup.protocol", setting('MultiEmail.' . $defaultGroup)['protocol']),
-            'mailPath'      => setting('MultiEmail.' . $defaultGroup)['mailPath'],
-            'SMTPHost'      => env("email.$defaultGroup.SMTPHost", setting('MultiEmail.' . $defaultGroup)['SMTPHost']),
-            'SMTPUser'      => env("email.$defaultGroup.SMTPUser", setting('MultiEmail.' . $defaultGroup)['SMTPUser']),
-            'SMTPPass'      => env("email.$defaultGroup.SMTPPass", setting('MultiEmail.' . $defaultGroup)['SMTPPass']),
-            'SMTPPort'      => (int) env("email.$defaultGroup.SMTPPort", setting('MultiEmail.' . $defaultGroup)['SMTPPort']),
-            'SMTPTimeout'   => setting('MultiEmail.' . $defaultGroup)['SMTPTimeout'],
-            'SMTPKeepAlive' => setting('MultiEmail.' . $defaultGroup)['SMTPKeepAlive'],
-            'SMTPCrypto'    => setting('MultiEmail.' . $defaultGroup)['SMTPCrypto'],
-            'wordWrap'      => setting('MultiEmail.' . $defaultGroup)['wordWrap'],
-            'wrapChars'     => setting('MultiEmail.' . $defaultGroup)['wrapChars'],
-            'mailType'      => setting('MultiEmail.' . $defaultGroup)['mailType'],
-            'charset'       => setting('MultiEmail.' . $defaultGroup)['charset'],
-            'validate'      => setting('MultiEmail.' . $defaultGroup)['validate'],
-            'priority'      => setting('MultiEmail.' . $defaultGroup)['priority'],
-            'CRLF'          => setting('MultiEmail.' . $defaultGroup)['CRLF'],
-            'newline'       => setting('MultiEmail.' . $defaultGroup)['newline'],
-            'BCCBatchMode'  => setting('MultiEmail.' . $defaultGroup)['BCCBatchMode'],
-            'BCCBatchSize'  => setting('MultiEmail.' . $defaultGroup)['BCCBatchSize'],
-            'DSN'           => setting('MultiEmail.' . $defaultGroup)['DSN'],
+            'fromEmail'     => env("email.$group.fromEmail", setting('MultiEmail.' . $group)['fromEmail']),
+            'fromName'      => env("email.$group.fromName", setting('MultiEmail.' . $group)['fromName']),
+            'userAgent'     => setting('MultiEmail.' . $group)['userAgent'],
+            'protocol'      => env("email.$group.protocol", setting('MultiEmail.' . $group)['protocol']),
+            'mailPath'      => setting('MultiEmail.' . $group)['mailPath'],
+            'SMTPHost'      => env("email.$group.SMTPHost", setting('MultiEmail.' . $group)['SMTPHost']),
+            'SMTPUser'      => env("email.$group.SMTPUser", setting('MultiEmail.' . $group)['SMTPUser']),
+            'SMTPPass'      => env("email.$group.SMTPPass", setting('MultiEmail.' . $group)['SMTPPass']),
+            'SMTPPort'      => (int) env("email.$group.SMTPPort", setting('MultiEmail.' . $group)['SMTPPort']),
+            'SMTPTimeout'   => setting('MultiEmail.' . $group)['SMTPTimeout'],
+            'SMTPKeepAlive' => setting('MultiEmail.' . $group)['SMTPKeepAlive'],
+            'SMTPCrypto'    => setting('MultiEmail.' . $group)['SMTPCrypto'],
+            'wordWrap'      => setting('MultiEmail.' . $group)['wordWrap'],
+            'wrapChars'     => setting('MultiEmail.' . $group)['wrapChars'],
+            'mailType'      => setting('MultiEmail.' . $group)['mailType'],
+            'charset'       => setting('MultiEmail.' . $group)['charset'],
+            'validate'      => setting('MultiEmail.' . $group)['validate'],
+            'priority'      => setting('MultiEmail.' . $group)['priority'],
+            'CRLF'          => setting('MultiEmail.' . $group)['CRLF'],
+            'newline'       => setting('MultiEmail.' . $group)['newline'],
+            'BCCBatchMode'  => setting('MultiEmail.' . $group)['BCCBatchMode'],
+            'BCCBatchSize'  => setting('MultiEmail.' . $group)['BCCBatchSize'],
+            'DSN'           => setting('MultiEmail.' . $group)['DSN'],
         ];
 
         if ($overrides !== []) {
