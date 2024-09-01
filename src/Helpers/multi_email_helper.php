@@ -27,18 +27,18 @@ if (! function_exists('multi_email')) {
             throw new Exception("Cannot send email from 'multi_email' helper.\n Undefined group name:  $group");
         }
 
-        $defaultGroup  = !empty($group) ? $group : setting('MultiEmail.defaultGroup');
+        $defaultGroup  = !empty($group) ? strtolower($group) : setting('MultiEmail.defaultGroup');
 
         $config = [
-            'fromEmail'     => setting('MultiEmail.' . $defaultGroup)['fromEmail'],
-            'fromName'      => setting('MultiEmail.' . $defaultGroup)['fromName'],
+            'fromEmail'     => env("email.$defaultGroup.fromEmail", setting('MultiEmail.' . $defaultGroup)['fromEmail']),
+            'fromName'      => env("email.$defaultGroup.fromName", setting('MultiEmail.' . $defaultGroup)['fromName']),
             'userAgent'     => setting('MultiEmail.' . $defaultGroup)['userAgent'],
-            'protocol'      => setting('MultiEmail.' . $defaultGroup)['protocol'],
+            'protocol'      => env("email.$defaultGroup.protocol", setting('MultiEmail.' . $defaultGroup)['protocol']),
             'mailPath'      => setting('MultiEmail.' . $defaultGroup)['mailPath'],
-            'SMTPHost'      => setting('MultiEmail.' . $defaultGroup)['SMTPHost'],
-            'SMTPUser'      => setting('MultiEmail.' . $defaultGroup)['SMTPUser'],
-            'SMTPPass'      => setting('MultiEmail.' . $defaultGroup)['SMTPPass'],
-            'SMTPPort'      => setting('MultiEmail.' . $defaultGroup)['SMTPPort'],
+            'SMTPHost'      => env("email.$defaultGroup.SMTPHost", setting('MultiEmail.' . $defaultGroup)['SMTPHost']),
+            'SMTPUser'      => env("email.$defaultGroup.SMTPUser", setting('MultiEmail.' . $defaultGroup)['SMTPUser']),
+            'SMTPPass'      => env("email.$defaultGroup.SMTPPass", setting('MultiEmail.' . $defaultGroup)['SMTPPass']),
+            'SMTPPort'      => (int) env("email.$defaultGroup.SMTPPort", setting('MultiEmail.' . $defaultGroup)['SMTPPort']),
             'SMTPTimeout'   => setting('MultiEmail.' . $defaultGroup)['SMTPTimeout'],
             'SMTPKeepAlive' => setting('MultiEmail.' . $defaultGroup)['SMTPKeepAlive'],
             'SMTPCrypto'    => setting('MultiEmail.' . $defaultGroup)['SMTPCrypto'],
