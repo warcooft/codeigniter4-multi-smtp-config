@@ -2,7 +2,7 @@
 
 A lightweight Multi-SMTP configuration helper for your CodeIgniter 4 application. This package allows you to use different email accounts simultaneously.
 
-![CodeIgniter](https://img.shields.io/badge/CodeIgniter-%5E4.8-blue)
+![CodeIgniter](https://img.shields.io/badge/CodeIgniter-%5E4.4.8-blue)
 ![PHP Version Require](https://img.shields.io/badge/PHP-%5E8.0-blue)
 
 ## Installation
@@ -21,7 +21,7 @@ After that, check the `app/Config/MultiEmail.php` file, and set it up with your 
 
 ## Configuring SMTP in the `.env` File
 
-We recommend setting the configuration for each SMTP email in the `.env` file instead of using `app/Config/MultiEmail`.
+We recommend setting the configuration for each SMTP email in the `.env` file instead of using `app/Config/MultiEmail.php`.
 
 For example, you can proceed as follows:
 
