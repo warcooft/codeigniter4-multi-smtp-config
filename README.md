@@ -1,4 +1,5 @@
 # CodeIgniter Multiple SMTP Configuration
+
 A lightweight Multi-SMTP configuration helper for your CodeIgniter 4 application. This package allows you to use different email accounts simultaneously.
 
 ![CodeIgniter](https://img.shields.io/badge/CodeIgniter-%5E4.8-blue)
@@ -17,6 +18,34 @@ php spark smtpconfig:publish
 ```
 
 After that, check the `app/Config/MultiEmail.php` file, and set it up with your email credentials.
+
+## Configuring SMTP in the `.env` File
+
+We recommend setting the configuration for each SMTP email in the `.env` file instead of using `app/Config/MultiEmail`.
+
+For example, you can proceed as follows:
+
+```
+#--------------------------------------------------------------------
+# MULTI-SMTP CONFIGURATION SETTINGS
+#--------------------------------------------------------------------
+
+# email.default.fromName =
+# email.default.fromEmail =
+# email.default.protocol = smtp
+# email.default.SMTPUser =
+# email.default.SMTPPass =
+# email.default.SMTPHost = smtp.gmail.com
+# email.default.SMTPPort = 587
+
+# email.outlook.fromName =
+# email.outlook.fromEmail =
+# email.outlook.protocol = smtp
+# email.outlook.SMTPUser =
+# email.outlook.SMTPPass =
+# email.outlook.SMTPHost = smtp.office365.com
+# email.outlook.SMTPPort = 587
+```
 
 ## Usage
 
